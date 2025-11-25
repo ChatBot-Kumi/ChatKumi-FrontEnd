@@ -21,7 +21,7 @@ header{
 }
 
 #organizacao_header1{
-    width: 90%;
+    width: 93%;
     display: flex;
     flex-direction: row;
     gap: 30px;
@@ -29,7 +29,7 @@ header{
     align-items: center;
 }
 #organizacao_header2{
-    width: 10%;
+    width: 7%;
     display: flex;
     flex-direction: row;
     gap: 2px;
@@ -64,14 +64,11 @@ header{
 main{
     background-color: rgb(253, 231, 202);
     width: 100%;
-    height: 815px;
-}
-
-.chat{
+    height: 720px;
     padding: 50px;
     display: flex;
     flex-direction: column;
-    gap: 500px;
+    gap: 630px;
 }
 
 .mensagem-chat{
@@ -87,4 +84,14 @@ main{
     width: 100%;
     height: 20px;
     background-color: #FFF;
+}
+
+.texto-usuario{
+    position: absolute; 
+    left: 5px;
+    top: 780px;
+    width: 100%;
+    background-color: #FFF;
+    height: 120px;
+    
 }

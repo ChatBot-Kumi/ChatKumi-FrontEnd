@@ -41,21 +41,13 @@ header{
     img{
         width: 20px;
     }
-
-    img:hover{
-        background-color: #c0571a;
-        
-    }
 }
 
 .material-symbols-outlined{
     color: #FFF;
     transform: rotate(90deg);
 }
-.material-symbols-outlined:hover{
-   background-color: #c0571a;
-   border-radius: 5px;
-}
+
 
 
 .status_header{

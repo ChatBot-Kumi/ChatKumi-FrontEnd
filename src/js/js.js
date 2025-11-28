@@ -1,46 +1,41 @@
-const chatInput = document.querySelector("#chat-input");
-const chatMessages = document.querySelector("#chat-mensagens");
-const chatForm = document.querySelector("#chat-form");
+const formulario = document.getElementById("chat-form");
+const campoMensagem = document.getElementById("chat-input");
+const areaMensagens = document.getElementById("area-mensagens"); // onde as mensagens aparecem
 
+formulario.addEventListener("submit", function(e) {
+    e.preventDefault();
 
-function adicionarMensagemChat(mensagem, remetente) {
-    const ElementoDaMensagem = document.createElement("div")
-    ElementoDaMensagem.classList.add("message", `${remetente}-message`);
-    ElementoDaMensagem.innerHTML = mensagem;
-    chatMessages.appendChild(ElementoDaMensagem);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
+    const mensagem = campoMensagem.value.trim();
+    if (mensagem === "") return;
 
-function limparChatInput() {
-    chatInput.value = "";
-}
+    // Adiciona mensagem do usuário no chat
+    adicionarMensagem(mensagem, "usuario");
 
-// ==========================================================
-// Ativadores
-// ==========================================================
+    // backend 
+    fetch("URL_DO_SEU_BACKEND", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mensagem: mensagem })
+    })
+    .then(res => res.json())
+    .then(data => {
+        adicionarMensagem(data.resposta, "kumi");
+    })
+    .catch(err => {
+        adicionarMensagem("Desculpe, houve um erro ao buscar a resposta 😕", "kumi");
+        console.error(err);
+    });
 
-chatInput.addEventListener("keydown", (e) => {
-    const userInput = e.target.value.trim();
-    if (e.key === "Enter" && userInput) {
-        e.preventDefault();
-        inputVoz = false;
-        adicionarMensagemChat(userInput, "user");
-        limparChatInput();
-
-    } else if (e.key === "Enter" && !userInput) {
-        e.preventDefault();
-    }
+    campoMensagem.value = "";
 });
 
-chatForm.addEventListener("submit", (e) => {
-    const userInput = chatInput.value.trim();
-    if (userInput) {
-        e.preventDefault();
-        inputVoz = false;
-        adicionarMensagemChat(userInput, "user");
-        limparChatInput();
-  
-    } else {
-        e.preventDefault();
-    }
-});
+function adicionarMensagem(texto, tipo) {
+    const div = document.createElement("div");
+    div.classList.add("mensagem-chat", tipo);
+    div.textContent = texto;
+
+    areaMensagens.appendChild(div);
+
+    // Rolagem para a última mensagem
+    areaMensagens.scrollTop = areaMensagens.scrollHeight;
+}

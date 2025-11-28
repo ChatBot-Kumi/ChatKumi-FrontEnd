@@ -86,12 +86,64 @@ main{
     background-color: #FFF;
 }
 
-.texto-usuario{
-    position: absolute; 
-    left: 5px;
-    top: 780px;
+.texto-usuario {
     width: 100%;
-    background-color: #FFF;
-    height: 120px;
-    
+    padding: 12px;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-top: 1px solid #ddd;
+}
+
+#chat-form {
+    width: 95%;
+    max-width: 900px;
+    display: flex;
+    gap: 10px;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 15px;
+    outline: none;
+}
+
+#chat-input:focus {
+    border-color: #f57c00;
+}
+
+#send-btn {
+    background: #f57c00;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#send-btn img {
+    width: 22px;
+    height: 22px;
+}
+
+#send-btn:hover {
+    background: #ff8f1f;
+}
+
+#img-send{
+    background-color: thistle;
 }

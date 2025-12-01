@@ -6,12 +6,14 @@
 
 body{
     background-color: rgb(253, 231, 202);
+    overflow-x: hidden; 
+    overflow-y: auto;    
 }
 
 header{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 98%;
     height: 80px;
     background-color: #FD7423;
     color: #FFF;
@@ -32,7 +34,7 @@ header{
     align-items: center;
 }
 #organizacao_header2{
-    width: 7%;
+    width: 5%;
     display: flex;
     flex-direction: row;
     gap: 2px;
@@ -57,12 +59,10 @@ header{
 }
 
 main{
-    width: 100%;
     height: auto;
     padding: 50px;
     display: flex;
     flex-direction: column;
-    gap: 630px;
 }
 
 .mensagem-chat{
@@ -140,4 +140,21 @@ main{
 
 #img-send{
     background-color: thistle;
+}
+
+/* Mensagem da Kumi (lado esquerdo) */
+.kumi {
+    align-self: flex-start;
+    background-color: #ffffff;
+    border-radius: 12px 12px 12px 0px;
+    margin-bottom: 10px;
+}
+
+/* Mensagem do usuário (lado direito) */
+.usuario {
+    align-self: flex-end;
+    background-color: #FD7423;
+    color: white;
+    border-radius: 12px 12px 0px 12px;
+    margin-bottom:10px;
 }

@@ -11,23 +11,23 @@ formulario.addEventListener("submit", function(e) {
     // Adiciona mensagem do usuário no chat
     adicionarMensagem(mensagem, "usuario");
 
-    // backend 
-    fetch("URL_DO_SEU_BACKEND", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ mensagem: mensagem })
-    })
-    .then(res => res.json())
-    .then(data => {
-        adicionarMensagem(data.resposta, "kumi");
-    })
-    .catch(err => {
-        adicionarMensagem("Desculpe, houve um erro ao buscar a resposta 😕", "kumi");
-        console.error(err);
-    });
-
-    campoMensagem.value = "";
+    //back-end
+    fetch("https://chatkumi-backend.onrender.com/api/chatbot/mensagem", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ texto: mensagem }) 
+})
+.then(res => res.text())  
+.then(data => {
+    adicionarMensagem(data, "kumi");
+})
+.catch(err => {
+    adicionarMensagem("Desculpe, houve um erro ao buscar a resposta 😕", "kumi");
+    console.error(err);
 });
+
+campoMensagem.value = "";
+
 
 function adicionarMensagem(texto, tipo) {
     const div = document.createElement("div");

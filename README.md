@@ -7,7 +7,7 @@ Um fronted de chatbot para academia Cross Kumite de artes marciais e ginástica,
 Para testar o chatbot é possível acessar de duas formas:
 
 - [ACESSO AO WEBSITE](https://chat-kumi-front-end.vercel.app) (Não é preciso instalação do front ou back-end)
-- [CLONAGEM DO REPOSITÓRIO](https://github.com/ChatBot-Kumi/ChatKumi-FrontEnd) (Pode ser usado com back-end local, mas não é necessário)
+- [CLONAGEM DO REPOSITÓRIO](https://github.com/ChatBot-Kumi/ChatKumi-FrontEnd) (Pode ser usado com back-end local [disponível aqui](https://github.com/ChatBot-Kumi/ChatKumi-BackEnd), mas não é necessário)
 
 ## 🚀 Como Executar
 

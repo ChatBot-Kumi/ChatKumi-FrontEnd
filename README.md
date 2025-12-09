@@ -9,14 +9,6 @@ Para testar o chatbot é possível acessar de duas formas:
 - [ACESSO AO WEBSITE](https://chat-kumi-front-end.vercel.app) (Não é preciso instalação do front ou back-end)
 - [CLONAGEM DO REPOSITÓRIO](https://github.com/ChatBot-Kumi/ChatKumi-FrontEnd) (Pode ser usado com back-end local, mas não é necessário)
 
-## 🛠️ Tecnologias
-
-- **Java 11+**
-- **Spring Boot** - Framework web
-- **Spring Stereotype Service** - Injeção de dependência
-- **Maven** - Gerenciador de dependências
-- **Collections Framework** - HashMap, ArrayList, List, Map
-
 ## 🚀 Como Executar
 
 ### Passos
